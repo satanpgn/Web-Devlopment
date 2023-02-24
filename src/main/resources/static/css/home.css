@@ -1,0 +1,156 @@
+/* assigning variables */
+:root{
+    --primary: #008000;
+    --secondary: #333;
+    --white: #ffffff;
+    --light: #666;
+    --dim: #999;
+    --shadow: #0000001a;
+    --heading-bg: #33ff6621;
+}
+/* global settings */
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-transform: none;
+    border: none;
+    transition: .2s linear;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-size: 60%;
+}
+section{
+    padding: 2rem 9%;
+}
+.b{
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--secondary);
+    color: var(--white);
+    border-radius: 20px;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+.b:hover{
+    background: var(--primary);
+}
+/* global settings ends */
+
+/* heading for all */
+.heading{
+    text-align: center;
+    background-color: var(--heading-bg);
+    color: var(--secondary);
+    margin: 2rem 0;
+    font-size: 4rem;
+    padding: 1rem;
+}
+.heading span{
+    color: var(--primary);
+}
+
+/* navbar starts */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0.5rem 1rem var(--shadow);
+    padding: 2rem 9%;
+    z-index: 100000;
+}
+header .logo{
+    font-size: 3rem;
+    color: var(--secondary);
+    font-weight: bolder;
+}
+
+header nav a{
+    font-size: 2rem;
+    padding: 0 2rem;
+    color: var(--secondary);
+    text-transform: capitalize;
+}
+header nav a:hover{
+    color: var(--primary);
+}
+/* navbar ends */
+/* sub heads of gadgets */
+.gadgets .heading{
+    margin: 90px;
+}
+.gadgets .all-box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.gadgets .all-box .box{
+    flex: 1 1 30rem;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1.5rem var(--shadow);
+    position: relative;
+    border: 1rem solid var(--shadow);
+}
+.gadgets .all-box .box .image{
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 2rem;
+}
+.gadgets .all-box .box .image img{
+    height: 25rem;
+}
+.gadgets .all-box .box:hover .image img{
+    transform: scale(1.3);
+}
+.gadgets .all-box .box .disc h3{
+    padding: 2rem;
+    text-align: center;
+}
+.gadgets .all-box .box .disc h3{
+    font-size: 2.4rem;
+    color: var(--secondary);
+}
+
+
+/* contact part ends */
+
+/* media quaries */
+@media (max-width:991px){
+    html{
+        font-size: 50%;
+    }
+    header{
+        padding: 2rem;
+    }
+    section{
+        padding: 2rem;
+    }
+}
+header .navbar{
+    position: absolute;
+    background-color: var(--white);
+    top: 100%;
+    left: 0;
+    right: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+header #option:checked ~ .navbar{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+header .navbar a{
+    margin: 1.5rem;
+    background: var(--white);
+    display: block;
+    text-align: center;
+}

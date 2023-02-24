@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    text-align: center;
+}
+body h1{
+    margin-top: 20px;
+    padding-right: 315px;
+}
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.photo img{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+
+
+/* Photographar section starts */
+.photographer{
+    padding: 15px;
+    margin-left: 100px;
+    height: 500px;
+    width: 280px;
+    text-align: justify;
+    border-radius: 20px;
+    background-color: #01796f;
+}
+.photographer h2{
+    margin-top: 40px;
+    color: white;
+} 
+.photographer h3{
+    padding-bottom: 0px;
+}
+.photographer #abt{
+    padding-top: 0px;
+    padding-right: 120px;
+}
+.photographer p{
+    padding-top: 30px;
+
+}
+.photographer img{
+    height: 100px;
+    width: 100px;
+    margin-top: 40px;
+    padding-right: 20px;
+    float: right;
+    border-radius: 50%;
+}
+/* Photographer section ends */
+
+body .in_body #view{
+    height: 30px;
+    width: 150px;
+    border-radius: 10px;
+    margin: 20px;
+}
+body .in_body #submit{
+    height: 60px;
+    width: 300px;
+    border-radius: 10px;
+    margin: 20px;
+}
+body .in_body input:hover {
+    background-color: rgb(87, 174, 87);
+    transition: 2s ease;
+}
+
+body .in_body p:hover {
+    cursor: pointer;
+}
+
+body .in_body .inner_body{
+    display: flex;
+    justify-content: center;
+    padding-right: 0px;
+    padding-top: 40px;
+}
+.container{margin-top:15px;
+margin-left: 60px;}
+
+/* comment section starts */
+.comment{ display: block; transition: all 1s;}
+
+.commentClicked{min-height: 0px; border: 1px solid #eee; border-radius: 5px; padding: 5px 10px}
+
+textarea{width: 100%; border: none; background: #E8E8E8; padding: 5px 10px; height: 50%;border-radius: 5px 5px 0px 0px; border-bottom: 2px solid #016BA8; transition: all 0.5s;margin-top: 15px;}
+
+button.primaryContained{ background: #016ba8; color: #fff; padding: 10px 10px; border: none; margin-top: 0px; cursor: pointer; text-transform: uppercase; letter-spacing: 4px; box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.25); transition: 1s all; font-size: 10px; border-radius: 5px;}
+
+button.primaryContained:hover{ background: #9201A8; }

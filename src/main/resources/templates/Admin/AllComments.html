@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Comments List</title>
+  <link rel="stylesheet" th:href="@{/css/table.css}">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" th:href="@{~/css/admin.css}">
+
+  <style>
+    .top-div form{
+      display: flex;
+    }
+    .edit{
+      background-color: #5041BC;
+      border-radius:20px ;
+      padding-top:7px ;
+      padding-bottom:7px ;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+<div class="sidebar">
+  <ul class="nav-links">
+    <li>
+      <a th:href="@{~/admin/allproduct}">
+        <i class='bx bx-box'></i>
+        <span class="links_name">My Product</span>
+      </a>
+    </li>
+    <li>
+      <a th:href="@{~/admin/allcomments}">
+        <i class='bx bx-list-ul'></i>
+        <span class="links_name">Comment list</span>
+      </a>
+    </li>
+
+    <li class="log_out">
+      <a th:href="@{~/logout}">
+        <i class='bx bx-log-out'></i>
+        <span class="links_name">Log out</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<section class="home-section">
+  <nav>
+    <div class="sidebar-button">
+      <i class='bx bx-menu sidebarBtn'></i>
+      <span class="dashboard">Administrator</span>
+    </div>
+  </nav>
+
+
+</section>
+
+
+<script>
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".sidebarBtn");
+  sidebarBtn.onclick = function () {
+    sidebar.classList.toggle("active");
+    if (sidebar.classList.contains("active")) {
+      sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+    } else
+      sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+  }
+</script>
+
+
+
+<div class="Main-wrapper">
+
+  <div style="overflow-x:auto;">
+    <table>
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>User_ID</th>
+        <th>User name</th>
+        <th>Product_ID</th>
+        <th>Product name</th>
+        <th>Comment</th>
+        <th>Edit</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="comment:${allcomments}">
+        <td th:text="${comment.id}"></td>
+        <td th:text="${comment.getUser_id().id}"></td>
+        <td th:text="${comment.getUser_id().fullname}"></td>
+        <td th:text="${comment.getProduct_id().id}"></td>
+        <td th:text="${comment.getProduct_id().name}"></td>
+        <td th:text="${comment.comment}"></td>
+        <!--    <td> <a class="edit" th:href="@{~/admin/editproduct/}+${product.id}" >edit</a></td>-->
+        <td> <a class="edit" th:href="@{~/admin/deletecomment/}+${comment.id}" >delete</a></td>
+
+      </tr>
+      </tbody>
+    </table>
+
+
+
+  </div>
+</div>
+
+</body>
+
+<script>
+  let myPage = "gallery";
+  let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+  listGroupItem.forEach(i=>{
+    i.classList.remove("active")
+  })
+  let activeID = document.getElementById(myPage);
+  activeID.classList.add("active");
+</script>
+
+</html>

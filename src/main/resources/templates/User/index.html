@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>MainPage</title>
+    <link rel="stylesheet" th:href="@{~/css/style.css}">
+</head>
+
+<body>
+<!-- header part suru bhoo  -->
+
+<header>
+    <!-- for mobile -->
+    <input type="checkbox" name="" id="option">
+    <label for="option" class="fas fa-bars"></label>
+    <img class="logo" th:src="@{~/images/gadgetlogo.jpeg}" style=" height: 50px; width: 50px">
+   <a href="#" class="logo">my<span>Gadgets</span></a>
+    <input  type="text" placeholder="Find here">
+
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gadgets">Products</a>
+        <a th:href="@{~/user/myComments/}+${info.id}">Profile</a>
+    </nav>
+
+</header>
+<!-- heading ends, home starts -->
+<section class="home" id="home">
+    <div class="disc">
+        <h3>Joyful</h3>
+        <span>To grow with the technology.</span>
+        <p>Gadget world is the finest store with big rate of growth, where we provide all kinds of gadgets, phones, laptops, and its accessories.A genuine product with warranty services.
+        The imports of the product are internationally for customer requirement providing.</p>
+<!--        <img class="logo" th:src="@{~/images/gadgets.jpeg}" style=" height: 50px; width: 50px">-->
+
+        <button Onclick="alert('OOPS! WHAT A SIGN')">
+            <a href="#" class="b">Explore Now</a>
+        </button>
+
+
+    </div>
+    
+    <img th:src="@{~/images/gadgets.jpeg}" style="width: 50%;">
+</section>
+<!-- home section khalass -->
+<!-- about section start -->
+<section class="about" id="about">
+    <h1 class="heading">About <span>us</span></h1>
+    <div class="whole">
+        <div class="img-container">
+            <img th:src="@{~/images/thegadgets.jpeg}">
+                 alt="Gadget About us">
+            <h3>New Arrivals</h3>
+        </div>
+        <!-- Another section starts here-->
+        <div class="disc">
+            <h3>Why we are special?</h3>
+            <p>We are offering the all sorts of products details and specifications which are available in the world.We import the product internationlly & domestic devies with the categories.Rate of growing of buisness is very high. Everyone in their home required the gadgets.So, anyone can look at details and keep a mindset about those products. </p>
+            <p>A preffered condition of configuration are seen in the display. We focus on every devices new, old, and latest to attract the custome. The great trends of Technology.Reparing Sevices are available. All types of accessories are available. A budget all facilities available. </p>
+<!--            <img th:src="'data:image/png;base64,'+${product.imageBase64}" alt="">-->
+            <a href="https://www.gadgetbytenepal.com/" class="b">Know more</a>
+        </div>
+    </div>
+</section>
+
+<!-- product part suru  what does plants means  equals to gadgets-->
+<section class="gadgets" id="gadgets">
+    <h1 class="heading">Available <span>Devices</span></h1>
+    <div class="all-box">
+        <div class="box"  th:each="product:${productfetch}">
+            <a th:href="@{~/user/productinfo/}+${product.id}">
+                <div class="image">
+                    <img th:src="'data:image/png;base64,'+${product.imageBase64}" alt="">
+                </div>
+                <div class="disc">
+                    <h3 th:text="${product.name}"></h3>
+                </div>
+            </a>
+        </div>
+    </div>
+    <button><a th:href="@{~/user/AllProduct}">view all</a></button>
+</section>
+<!--  Services starts here-->
+<section id="feature" class="section-p1">
+    <h2>Services</h2>
+    <div class="fe-box">
+        <h3> Free Shipping </h3>
+        <img src="../images/freeshipping.jpg" alt="" height="100" width="100">
+    </div>
+    <div class="fe-box">
+        <h3>Online Order </h3>
+        <img src="../images/onlineorder.jpg" alt="">
+    </div>
+    <div class="fe-box">
+        <h3> Save Money </h3>
+        <img src="../images/save.png" alt="">
+    </div>
+    <div class="fe-box">
+        <h3> Save Time </h3>
+        <img src="../images/savtime.jpg" alt="">
+    </div>
+    <div class="fe-box">
+        <h3> 24*7 Support </h3>
+        <img src="../images/247.jpg" alt="">
+    </div>
+</section>
+
+<!-- Newsletter starts here-->
+
+<section id="newsletter" class="section-p1" section-m1>
+    <div class="newstext">
+        <h4>Sign up For Newsletter</h4>
+        <p>Get Email Updates about our Special Offers</p>
+    </div>
+    <div class="form">
+        <input type="text" placeholder="Email Address">
+        <button>Sign Up</button>
+    </div>
+</section>
+
+<!-- Another Contact starts here-->
+
+<footer class="Contact" style="margin-top: 60px;" >
+    <div class="col">
+        <h4>Contact</h4>
+        <img class="logo" th:src="@{~/images/gadgetlogo.jpeg}" style=" height: 50px; width: 50px">
+        <p><strong>Address:</strong> 33 Durbar Marg Road,Mercatile Plaza,Kathmandu</p>
+        <p><strong>Phone:</strong> +9779749914864, 9803017003</p>
+        <p><strong>Opening Hours:</strong>Monday-Friday:09:00a.m.-19:00p.m.</p>
+    </div>
+    </div>
+
+<!-- Another Follows us starts here-->
+    <div class="follow">
+        <h4>Follow Us</h4>
+        <div class="icon">
+            <a href="https://www.facebook.com/" class="icon facebook">
+                <div class="tooltip">Facebook</div>
+                <span><i class="fab fa-facebook-f"></i></span>
+            </a>
+            <a href="https://twitter.com/" class="icon twitter">
+                <div class="tooltip">Twitter</div>
+                <span><i class="fab fa-twitter"></i></span>
+            </a>
+            <a href="https://github.com/" class="icon Github">
+                <div class="tooltip">Github</div>
+                <span><i class="fab GitHub"></i></span>
+            </a>
+            <a href="https://www.instagram.com/" class="icon instagram">
+                <div class="tooltip">Instagram</div>
+                <span><i class="fab fa-instagram"></i></span>
+            </a>
+            <a href="https://mail.google.com/mail/u/0/#inbox" class="icon Gmail">
+                <div class="tooltip">Gmail</div>
+                <span><i class="fab Google"></i></span>
+            </a>
+            <a href="#" class="icon youtube">
+                <div class="tooltip">Youtube</div>
+                <span><i class="fab fa-youtube"></i></span>
+            </a>
+        </div>
+        </div>
+    </div>
+
+
+    <div class="col">
+        <h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Delivery Information </a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Imports & Exports</a>
+        <a href="#">Viewers</a>
+    </div>
+</div>
+</div>
+    <div class="col install">
+        <h4>Install App</h4>
+        <p>From Google store & App Store</p>
+        <div class="row">
+            <img class="logo" th:src="@{~/images/app.jpeg}" style=" height: 50px; width: 50px">
+            <img class="logo" th:src="@{~/images/ggole.jpeg}" style=" height: 50px; width: 50px">
+        </div>
+    </div>
+
+        <div class="col install">
+         <p> Online Payment Gateways Partners</p>
+            <div class="row">
+                <img class="logo" th:src="@{~/images/visa.jpg}" style=" height: 150px; width: 150px">
+                <img class="logo" th:src="@{~/images/esewa.jpeg}" style=" height: 150px; width: 150px">
+                <img class="logo" th:src="@{~/images/imepay.jpeg}" style=" height: 150px; width: 150px">
+            </div>
+        </div>
+
+</div>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</footer>
+<table border=3px bgcolor="silver" height=150 width="100%">
+    <tr bgcolor="red" align=Centre>
+        <th>Brand</th>
+        <th>
+            <a href="https://www.dell.com/en-us">
+                <button>Dell
+                </button></a></th>
+        <th><a href="https://www.apple.com/">
+                <button>Apple
+                </button></a>></th>
+        <th>
+            <a href="https://www.hp.com/us-en/home.html">
+                <button>HP
+                </button></a></th>
+        <th>
+            <a href="https://toshibalaptops.webnode.page/">
+                <button>Toshiba
+                </button></a></th>
+        <th>
+
+            <a href="https://www.msi.com/index.php">
+                <button>MSI
+                </button>
+            </a></th>
+    </tr>
+
+    <tr bgcolor="orange" align=Centre>
+        <th>MRP-SP</th>
+        <td>$1800+</td>
+        <td>$2200+</td>
+        <td>$990+</td>
+        <td>$8435+</td>
+        <td>$2500+</td>
+    </tr>
+
+    <tr bgcolor="pink" align=Centre>
+        <th>Configuration</th>
+        <td>8/256SSDgb</td>
+        <td>8/256SSDgb</td>
+        <td>8/256SSDgb</td>
+        <td>8/256SSDgb</td>
+        <td>8/256SSDgb</td>
+    </tr>
+    <p>We also provide all Genuine Brands with High Quality Discounts</p>
+</table>
+
+<div class="credit">
+    Coded By <span>Tech & Innovative</span>
+</div>
+
+<p id="rot">Thank You For Visiting Us!!! </p>
+
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    
+    <div class="sidebar">
+        <ul class="nav-links">
+            <li>
+                <a href="#" class="active">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="./product.html">
+                    <i class='bx bx-box'></i>
+                    <span class="links_name">Product</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="links_name">Order list</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Analytics</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-coin-stack'></i>
+                    <span class="links_name">Stock</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-book-alt'></i>
+                    <span class="links_name">Total order</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Team</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-message'></i>
+                    <span class="links_name">Messages</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Favrorites</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Setting</span>
+                </a>
+            </li>
+            <li class="log_out">
+                <a href="#">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Administrator</span>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class='bx bx-search'></i>
+            </div>
+            <div class="profile-details">
+                <!--<img src="images/profile.jpg" alt="">-->
+                <span class="admin_name">Sujit Lopchan</span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+        </nav>
+
+
+    </section>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    </script> 
+
+
+<table border="3" cellpadding="10" cellspacing="0">
+    <caption>
+            <div class="add_product" >
+                <a href="../Admin/add_product.html">Add Products</a>
+            </div>
+
+            Grocery Items Bill
+        </caption>
+        <thead>
+           <colgroup>
+              <col width="60%">
+              <col width="20%">
+              <col width="20%" span="1" style="background-color:#f1f1f1;">
+           </colgroup>
+           <tr>
+              <th align="left" class="col-item-name">Item Name</th>
+              <th align="center" class="col-quantity">Quantity</th>
+              <th align="center" class="col-price">Price</th>
+           </tr>
+        </thead>
+        <tbody>
+           <tr>
+              <td>Potatoes</td>
+              <td align="center">51</td>
+              <td align="center">$1.00</td>
+           </tr>
+           <tr>
+              <td>Nuts</td>
+              <td align="center">20</td>
+              <td align="center">$5</td>
+           </tr>
+           <tr>
+              <td>Onions</td>
+              <td align="center">4</td>
+              <td align="center">$3.00</td>
+           </tr>
+           <tr>
+              <td charoff="1">Very long awkwardly named yet still delicious item here</td>
+              <td align="center">4</td>
+              <td align="center">$3.00</td>
+           </tr>
+           <tr>
+              <td>Carrots</td>
+              <td align="center">12</td>
+              <td align="center">$2.99</td>
+           </tr>
+        </tbody>
+        <tfoot>
+           <td class="price_txt" scope="col" colspan="2">Total Price</td>
+           <td align="center" >$33.79</td>
+        </tfoot>
+     </table>
+</body>
+</html>

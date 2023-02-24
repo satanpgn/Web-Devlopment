@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Information of product </title>
+  <link rel="stylesheet" th:href="@{~/css/photo1.css}">
+</head>
+
+<body>
+<h1>Gadget Galleries</h1>
+<section>
+  <div class="top">
+    <img th:src="'data:image/png;base64,'+${productdata.imageBase64}" alt="">
+  </div>
+  <div class="description">
+    <p>Name: <span th:text="${productdata.getName()}"></span></p>
+    <p>Brand: <span th:text="${productdata.getBrand()}"></span></p>
+    <p>Lunched: <span th:text="${productdata.getLuncheddate()}"></span></p>
+    <p>Color: <span th:text="${productdata.getColor()}"></span></p>
+    <p>Battery: <span th:text="${productdata.getBattery()}"></span></p>
+    <p>Storage: <span th:text="${productdata.getStorage()}"></span></p>
+    <p>Camera: <span th:text="${productdata.getCamera()}"></span></p>
+    <p>Warranty: <span th:text="${productdata.getWarranty()}"></span></p>
+    <p>Price: <span th:text="${productdata.getPrice()}"></span></p>
+  </div>
+
+
+
+  <form th:action="@{/user/saveComment}" th:object="${comment}" th:method="post" >
+    <input type="text" hidden="hidden" name="user_id"  th:value="${info.id}">  <br>
+    <input type="text" hidden="hidden" name="product_id"  th:value="${productdata.id}">  <br>
+  <div class="review">
+    <h2>Reviews</h2>
+    <textarea name="review" id="comment" cols="90" rows="10" th:field="*{comment}"> </textarea> <br>
+    <input type="submit" value="Post Comment" >
+    <input type="reset" value="Clear">
+  </div>
+  </form>
+
+<!--  <a th:href="@{~/user/myComments/}+${info.id}"> myComments</a>-->
+</section>
+
+<div  th:each="product:${allcomments}">
+  <h3 th:text="${product.getUser_id().fullname}"></h3>
+  <p th:text="${product.comment}"></p>
+</div>
+</body>
+
+</html>
